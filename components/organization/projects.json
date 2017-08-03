@@ -15,7 +15,7 @@
 	{
 		"repo": "webpack/loader-utils",
 		"npm": "loader-utils",
-		"description": "Webpack loader utilities.",
+		"description": "webpack loader utilities.",
 		"maintainer": "sokra"
 	},
 	{
@@ -256,7 +256,7 @@
 		"repo": "webpack/i18n-webpack-plugin",
 		"npm": "i18n-webpack-plugin",
 		"description": "Embed localization into your bundle.",
-		"maintainer": "EcutDavid"
+		"maintainer": ""
 	},
 	{
 		"repo": "webpack/json5-loader",
@@ -289,4 +289,3 @@
 		"maintainer": "thelarkinn"
 	}
 ]
-	

@@ -1,6 +1,7 @@
 import React from 'react';
 import Interactive from 'antwar-interactive';
 import { GoogleAnalytics } from 'antwar-helpers';
+import NotificationBar from '../notification-bar/notification-bar';
 import Navigation from '../navigation/navigation';
 import Footer from '../footer/footer';
 import SidebarMobile from '../sidebar-mobile/sidebar-mobile';
@@ -10,11 +11,13 @@ import './site-style';
 import '../../styles';
 import '../../styles/icon.font.js';
 import '../container/container-style.scss';
+import '../notification-bar/notification-bar-style';
 import '../navigation/navigation-style';
 import '../navigation/search-style';
 import '../sidebar-mobile/sidebar-mobile-style';
 import '../sidebar-item/sidebar-item-style';
 import '../logo/logo-style';
+import '../dropdown/dropdown-style.scss';
 
 export default props => {
   // Retrieve section data
@@ -27,15 +30,19 @@ export default props => {
         url
       }))
     }));
-
-  // Rename the root section ("Webpack" => "Other") and push it to the end
-  let rootIndex = sections.findIndex(section => section.title === 'Webpack');
+  
+  // Rename the root section ("webpack" => "Other") and push it to the end
+  let rootIndex = sections.findIndex(section => section.title === 'webpack');
   let rootSection = sections.splice(rootIndex, 1)[0];
   rootSection.title = '其他';
   sections.push(rootSection);
 
   return (
     <div id="site" className="site">
+      <Interactive
+        id="components/notification-bar/notification-bar.jsx"
+        component={ NotificationBar } />
+        
       <Interactive
         id="components/navigation/navigation.jsx"
         component={ Navigation }
